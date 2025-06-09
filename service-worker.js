@@ -5,10 +5,8 @@ const urlsToCache = [
     '/app.js',
     '/manifest.json',
     'https://cdn.tailwindcss.com'
-    // Ajoutez ici toutes les autres ressources statiques que vous souhaitez mettre en cache
 ];
 
-// Installation du Service Worker et mise en cache des ressources
 self.addEventListener('install', event => {
     event.waitUntil(
         caches.open(CACHE_NAME)
@@ -19,7 +17,6 @@ self.addEventListener('install', event => {
     );
 });
 
-// Activation du Service Worker et suppression des anciens caches
 self.addEventListener('activate', event => {
     event.waitUntil(
         caches.keys().then(cacheNames => {
@@ -36,19 +33,15 @@ self.addEventListener('activate', event => {
     );
 });
 
-// Stratégie de mise en cache : "Cache, then Network"
 self.addEventListener('fetch', event => {
     event.respondWith(
         caches.match(event.request)
             .then(response => {
-                // Si la ressource est dans le cache, la retourner
                 if (response) {
                     return response;
                 }
-                // Sinon, chercher la ressource sur le réseau
                 return fetch(event.request)
                     .then(response => {
-                        // Si la réponse est valide, la mettre en cache
                         if (!response || response.status !== 200 || response.type !== 'basic') {
                             return response;
                         }
