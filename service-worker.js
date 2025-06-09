@@ -4,7 +4,6 @@ const urlsToCache = [
     '/WPA_workspace/index.html',
     '/WPA_workspace/app.js',
     '/WPA_workspace/manifest.json',
-    'https://cdn.tailwindcss.com'
 ];
 
 self.addEventListener('install', event => {
