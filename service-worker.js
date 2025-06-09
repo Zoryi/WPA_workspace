@@ -1,9 +1,9 @@
 const CACHE_NAME = 'hello-world-wpa-cache-v1';
 const urlsToCache = [
-    '/',
-    '/index.html',
-    '/app.js',
-    '/manifest.json',
+    '/WPA_workspace/',
+    '/WPA_workspace/index.html',
+    '/WPA_workspace/app.js',
+    '/WPA_workspace/manifest.json',
     'https://cdn.tailwindcss.com'
 ];
 
