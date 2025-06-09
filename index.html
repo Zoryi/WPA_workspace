@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World!</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-400 to-purple-600 text-white p-4">
+    <div class="bg-white bg-opacity-20 backdrop-filter backdrop-blur-lg p-8 rounded-xl shadow-2xl text-center max-w-sm w-full">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-4 animate-pulse">Hello World!</h1>
+        <p class="text-lg opacity-80">
+            Bienvenue dans votre première page web avec Tailwind CSS.
+        </p>
+    </div>
+
+    <script>
+        const title = document.querySelector('h1');
+        setInterval(() => {
+            title.classList.toggle('scale-105');
+            title.classList.toggle('text-blue-200');
+        }, 1500);
+    </script>
+</body>
+</html>
